@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1f3a5f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Book Sale Helper</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1 id="appName">📚 Book Sale Helper</h1>
+    <button id="whoBtn" class="chip" type="button" aria-label="Change who is scanning">👤 <span id="whoName">Your name</span></button>
+    <button id="gearBtn" class="gear" type="button" aria-label="Settings (for the tool's organizer)">⚙︎</button>
+  </header>
+  <div id="demoBanner" class="banner hidden">
+    <b>Practice mode.</b> Titles and covers are real, prices are made up, and nothing goes to the spreadsheet.
+  </div>
+
+  <!-- ============ Scan screen ============ -->
+  <main id="scanView" class="wrap">
+    <div class="modes" role="group" aria-label="What are you doing?">
+      <button class="mode" type="button" data-mode="quick"><span class="ic">🔍</span><span><b>Quick Check</b><span class="muted">Nothing saved</span></span></button>
+      <button class="mode" type="button" data-mode="detailed"><span class="ic">📝</span><span><b>One at a Time</b><span class="muted">Save with details</span></span></button>
+      <button class="mode" type="button" data-mode="rapid"><span class="ic">⚡</span><span><b>Rapid Scan</b><span class="muted">Scan many, save all</span></span></button>
+      <button class="mode" type="button" data-mode="sold"><span class="ic">🏷️</span><span><b>Mark Sold</b><span class="muted">At the sale</span></span></button>
+    </div>
+    <p id="modeHelp" class="mode-help"></p>
+
+    <div id="condWrap">
+      <div class="row-label">Price these books as:</div>
+      <div class="seg" role="group" aria-label="Price as used or new">
+        <button type="button" data-cond="used">Used</button>
+        <button type="button" data-cond="new">New</button>
+      </div>
+    </div>
+
+    <section class="card" aria-label="Find a book">
+      <label for="isbnInput" class="row-label" style="display:block">ISBN</label>
+      <form id="isbnForm" class="entry-row" autocomplete="off">
+        <input id="isbnInput" class="big-input" inputmode="numeric" enterkeyhint="search" placeholder="Scan or type ISBN" autocomplete="off" autocorrect="off" spellcheck="false">
+        <button class="btn primary" type="submit">Look up</button>
+      </form>
+      <div id="entryMsg" class="msg" role="status" aria-live="polite"></div>
+      <div class="entry-alt">
+        <button id="camBtn" class="btn" type="button"><span>📷</span>Scan barcode with camera</button>
+        <button id="photoBtn" class="btn" type="button"><span>🖼️</span>Photo of the ISBN</button>
+        <button id="titleBtn" class="btn" type="button"><span>🔎</span>No ISBN? Search title</button>
+      </div>
+      <input id="photoInput" type="file" accept="image/*" capture="environment" hidden>
+    </section>
+
+    <section id="rapidPanel" class="hidden" aria-live="polite"></section>
+    <section id="result" class="hidden" aria-live="polite"></section>
+  </main>
+
+  <!-- ============ Settings screen ============ -->
+  <main id="settingsView" class="wrap hidden"></main>
+
+  <div id="modalBack" class="modal-back hidden">
+    <div id="modal" class="modal" role="dialog" aria-modal="true"></div>
+  </div>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="isbn.js"></script>
+  <script src="logic.js"></script>
+  <script src="demo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

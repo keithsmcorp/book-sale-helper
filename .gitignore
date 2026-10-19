@@ -1,0 +1,11 @@
+.claude/
+__pycache__/
+
+# Google Drive shortcut files and Windows folder settings (this folder lives in Google Drive)
+*.gsheet
+*.gdoc
+*.gslides
+*.gform
+desktop.ini
+.tmp.drivedownload/
+.tmp.driveupload/
