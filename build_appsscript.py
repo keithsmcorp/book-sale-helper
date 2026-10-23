@@ -3,7 +3,7 @@
 The page lives in docs/ (one copy, used by GitHub Pages too). After changing anything
 in docs/, run:
 
-    python build_appsscript.py
+    py build_appsscript.py
 
 then paste apps-script/Index.html into the Apps Script "Index" file and redeploy.
 """
