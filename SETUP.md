@@ -11,7 +11,7 @@ The `docs/` folder is the same page split into separate files. You only need it 
 
 Allow about 10 minutes the first time. Steps 1–3 get everything working. Step 4 adds eBay prices inside the page, and the eBay sign-up can take a day or two, so start it early.
 
-The spreadsheet already exists: **Library Book Sale List**, in **Drive ▸ Claude ▸ Library Book Sale**.
+The spreadsheet already exists: **Library Book Sale List**, in **Drive ▸ Claude ▸ book-sale-helper**.
 
 ---
 
