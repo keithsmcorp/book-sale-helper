@@ -112,7 +112,7 @@ Sign up at keepa.com and buy an API plan. Then go to **⚙ Settings ▸ Price so
 The page's source is in `docs/`. After any change there:
 
 ```
-python build_appsscript.py
+py build_appsscript.py
 ```
 
 That rebuilds `apps-script/Index.html`. Paste the new copy into the Apps Script **Index** file and redeploy as a **New version** (step 2). If you use the GitHub copy, upload the changed `docs/` files there too.
